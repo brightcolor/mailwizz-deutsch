@@ -1,0 +1,61 @@
+<?php declare(strict_types=1);
+if (!defined('MW_PATH')) {
+    exit('No direct script access allowed');
+}
+
+/**
+ * German translation for the MailWizz category "sending_domains" (du form).
+ * Source: https://github.com/brightcolor/mailwizz-deutsch
+ */
+return array (
+  'Your system misses a few PHP functions/extensions in order to use this feature.' => 'Deinem System fehlen für diese Funktion einige PHP-Funktionen oder -Erweiterungen.',
+  'View sending domains' => 'Absenderdomains ansehen',
+  'Sending domains' => 'Absenderdomains',
+  'Create new sending domain' => 'Neue Absenderdomain anlegen',
+  'Update sending domain' => 'Absenderdomain bearbeiten',
+  'Unable to retrieve the TXT records for your domain name.' => 'Die TXT-Einträge deines Domainnamens ließen sich nicht abrufen.',
+  'Unable to find proper TXT record for your domain name, if you just added the records please wait for them to propagate.' => 'Für deinen Domainnamen wurde kein passender TXT-Eintrag gefunden. Hast du die Einträge gerade erst angelegt, warte, bis sie überall angekommen sind.',
+  'Your domain has been successfully verified.' => 'Deine Domain ist bestätigt.',
+  'This domain has been verified' => 'Diese Domain ist bestätigt',
+  'Verify this domain' => 'Diese Domain bestätigen',
+  'Please edit your DNS records for {domain} domain and add the following TXT record: ' => 'Bitte ergänze die DNS-Einträge der Domain {domain} um diesen TXT-Eintrag: ',
+  'For best delivery rates, your domain SPF record must look like:' => 'Für die beste Zustellung sollte der SPF-Eintrag deiner Domain so aussehen:',
+  'After you have added the DNS records for your domain, please click the Verify DNS records button below to verify your domain.' => 'Hast du die DNS-Einträge für deine Domain angelegt, klick unten auf „DNS-Einträge prüfen“, um die Domain zu bestätigen.',
+  'Please note that it can take up to 48 hours for DNS changes to propagate. If verification fails now, please try again later.' => 'Bis DNS-Änderungen überall ankommen, können bis zu 48 Stunden vergehen. Schlägt die Prüfung jetzt fehl, versuche es später erneut.',
+  'Verify DNS records' => 'DNS-Einträge prüfen',
+  'With sending domains you can verify the authenticity of the domain used in the campaigns FROM email field.' => 'Mit Absenderdomains bestätigst du, dass die Domain in der Absenderadresse deiner Kampagnen dir gehört.',
+  'Verification is very simple, it involves adding just two DNS TXT records for the domain used in the FROM field of a campaign.' => 'Die Bestätigung ist einfach: Du legst nur zwei DNS-TXT-Einträge für die Domain an, die im Absenderfeld einer Kampagne steht.',
+  'Once a sending domain is verified, all future campaigns sent from the verified domain will be DKIM signed and will pass SPF validation, thus giving a higher inbox delivery rate.' => 'Ist eine Absenderdomain bestätigt, werden alle künftigen Kampagnen von dieser Domain mit DKIM signiert und bestehen die SPF-Prüfung. Das verbessert die Zustellung in den Posteingang.',
+  'Customer' => 'Kunde',
+  'Domain' => 'Domain',
+  'Domain name' => 'Domainname',
+  'Dkim private key' => 'Privater DKIM-Schlüssel',
+  'Dkim public key' => 'Öffentlicher DKIM-Schlüssel',
+  'Locked' => 'Gesperrt',
+  'Verified' => 'Bestätigt',
+  'DKIM Signing' => 'DKIM-Signatur',
+  'If this domain is verified in behalf of a customer, choose the customer.' => 'Wird diese Domain für einen Kunden bestätigt, wähle den Kunden.',
+  'Domain name, i.e: example.com' => 'Domainname, z. B.: meine-firma.de',
+  'Set this to yes only if you already have DNS records set for this domain.' => 'Setz das nur auf Ja, wenn die DNS-Einträge für diese Domain schon angelegt sind.',
+  'Whether this domain is locked and the customer cannot modify or delete it.' => 'Ob diese Domain gesperrt ist, sodass der Kunde sie weder ändern noch löschen kann.',
+  'Whether we should use DKIM to sign outgoing campaigns for this domain.' => 'Ob ausgehende Kampagnen dieser Domain mit DKIM signiert werden.',
+  'DKIM private key, leave this empty to be auto-generated. Please do not edit this record unless you really know what you are doing.' => 'Privater DKIM-Schlüssel. Leer lassen, dann wird er automatisch erzeugt. Ändere diesen Eintrag nur, wenn du genau weißt, was du tust.',
+  'DKIM public key, leave this empty to be auto-generated. Please do not edit this record unless you really know what you are doing.' => 'Öffentlicher DKIM-Schlüssel. Leer lassen, dann wird er automatisch erzeugt. Ändere diesen Eintrag nur, wenn du genau weißt, was du tust.',
+  'OpenSSL extension missing.' => 'Die OpenSSL-Erweiterung fehlt.',
+  '{func} function must be enabled in order to handle the DKIM keys.' => 'Für die DKIM-Schlüssel muss die Funktion {func} aktiviert sein.',
+  'Unable to create {dir} directory.' => 'Das Verzeichnis {dir} ließ sich nicht anlegen.',
+  'While generating the private key, exec failed with: {fail}' => 'Beim Erzeugen des privaten Schlüssels ist exec fehlgeschlagen: {fail}',
+  'Unknown error, most probably cannot exec the openssl command!' => 'Unbekannter Fehler, vermutlich lässt sich der Befehl openssl nicht ausführen.',
+  'Unable to check the private key file.' => 'Die Datei mit dem privaten Schlüssel ließ sich nicht prüfen.',
+  'While generating the public key, exec failed with: {fail}' => 'Beim Erzeugen des öffentlichen Schlüssels ist exec fehlgeschlagen: {fail}',
+  'Unable to check the public key file.' => 'Die Datei mit dem öffentlichen Schlüssel ließ sich nicht prüfen.',
+  'You have reached the maximum number of allowed sending domains!' => 'Du hast die höchste erlaubte Zahl an Absenderdomains erreicht.',
+  'For best delivery rates, your domain DMARC record must look like:' => 'Für die beste Zustellung sollte der DMARC-Eintrag deiner Domain so aussehen:',
+  'Domain ID' => 'Domain-ID',
+  'Send customer notification' => 'Kunden benachrichtigen',
+  'Whether to send an email to the customer with the DNS records to be added.' => 'Ob der Kunde eine E-Mail mit den anzulegenden DNS-Einträgen bekommt.',
+  'Email me the information' => 'Mir die Angaben per E-Mail schicken',
+  'Whether to send you an email with the DNS records to be added.' => 'Ob du eine E-Mail mit den anzulegenden DNS-Einträgen bekommst.',
+  'Send notification' => 'Benachrichtigung senden',
+  'Please add the following DNS records to the [DOMAIN_NAME] domain' => 'Bitte lege diese DNS-Einträge für die Domain [DOMAIN_NAME] an',
+);

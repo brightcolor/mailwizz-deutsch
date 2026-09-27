@@ -1,0 +1,27 @@
+name: Prüfung
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.2', '8.3', '8.4']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+      - name: Syntax
+        run: find deutsch tools tests source -name '*.php' -print0 | xargs -0 -n1 php -l > /dev/null
+      - name: Tests
+        run: php tests/run.php
+      - name: Textpaket passt zu den Quellen
+        run: php tools/build.php --check
+      - name: Begriffe nach Glossar
+        run: php tools/check.php

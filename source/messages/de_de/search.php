@@ -1,0 +1,12 @@
+<?php declare(strict_types=1);
+if (!defined('MW_PATH')) {
+    exit('No direct script access allowed');
+}
+
+/**
+ * German translation for the MailWizz category "search" (du form).
+ * Source: https://github.com/brightcolor/mailwizz-deutsch
+ */
+return array (
+  'There are no results matching your search!' => 'Zu deiner Suche gibt es keine Treffer.',
+);

@@ -1,0 +1,61 @@
+<?php declare(strict_types=1);
+if (!defined('MW_PATH')) {
+    exit('No direct script access allowed');
+}
+
+/**
+ * German translation for the MailWizz category "email_templates" (du form).
+ * Source: https://github.com/brightcolor/mailwizz-deutsch
+ */
+return array (
+  'Email templates' => 'E-Mail-Vorlagen',
+  'View templates' => 'Vorlagen ansehen',
+  'Gallery' => 'Galerie',
+  'You successfully created a new email template!' => 'Deine neue E-Mail-Vorlage ist angelegt.',
+  'Create email template' => 'E-Mail-Vorlage anlegen',
+  'You successfully updated your email template!' => 'Deine E-Mail-Vorlage ist aktualisiert.',
+  'Update email template' => 'E-Mail-Vorlage bearbeiten',
+  'Unable to copy the template!' => 'Die Vorlage ließ sich nicht kopieren.',
+  'The template has been successfully copied!' => 'Die Vorlage ist kopiert.',
+  'Please wait while saving your template screenshot...' => 'Bitte warten, das Vorschaubild deiner Vorlage wird gespeichert …',
+  'Your template was successfully deleted!' => 'Deine Vorlage ist gelöscht.',
+  'View categories' => 'Kategorien ansehen',
+  'Categories' => 'Kategorien',
+  'Create new category' => 'Neue Kategorie anlegen',
+  'Update category' => 'Kategorie bearbeiten',
+  'Upload template' => 'Vorlage hochladen',
+  'Preview' => 'Vorschau',
+  'Upload template archive' => 'Archiv mit Vorlage hochladen',
+  'Upload archive' => 'Archiv hochladen',
+  'Category' => 'Kategorie',
+  'Customer' => 'Kunde',
+  'Name' => 'Name',
+  'Templates' => 'Vorlagen',
+  'Template' => 'Vorlage',
+  'Template uid' => 'UID der Vorlage',
+  'Content' => 'Inhalt',
+  'Content hash' => 'Hash des Inhalts',
+  'Create screenshot' => 'Vorschaubild erstellen',
+  'Screenshot' => 'Vorschaubild',
+  'Archive file' => 'Archivdatei',
+  'The name of the template, used for you to make the difference if having to many templates.' => 'Der Name der Vorlage, damit du bei vielen Vorlagen den Überblick behältst.',
+  'Email templates gallery' => 'Galerie der E-Mail-Vorlagen',
+  'Unable to import the template!' => 'Die Vorlage ließ sich nicht importieren.',
+  'Unable to save the imported template!' => 'Die importierte Vorlage ließ sich nicht speichern.',
+  'The template has been successfully imported!' => 'Die Vorlage ist importiert.',
+  'Please specify the email address to where we should send the test email.' => 'Bitte gib die E-Mail-Adresse an, an die die Test-E-Mail gehen soll.',
+  'Email delivery is temporary disabled.' => 'Der E-Mail-Versand ist vorübergehend abgeschaltet.',
+  'The email address {email} does not seem to be valid!' => 'Die E-Mail-Adresse {email} ist offenbar ungültig.',
+  'Cannot send using provided email address(es)!' => 'Mit den angegebenen E-Mail-Adressen lässt sich nicht versenden.',
+  'Unable to send the test email to {email}!' => 'Die Test-E-Mail an {email} ließ sich nicht versenden.',
+  'Test email successfully sent to {email}!' => 'Die Test-E-Mail an {email} ist versendet.',
+  'Send a test email using this template' => 'Test-E-Mail mit dieser Vorlage senden',
+  'Send a test email' => 'Test-E-Mail senden',
+  'Send test' => 'Test senden',
+  'Import html from url' => 'HTML von URL importieren',
+  'Import html template from url' => 'HTML-Vorlage von URL importieren',
+  'Please note that your url must contain a valid html email template with absolute paths to resources!' => 'Unter der URL muss eine gültige HTML-E-Mail-Vorlage mit absoluten Pfaden zu allen Dateien liegen.',
+  'Import' => 'Importieren',
+  'Please see <a href="{templateArchiveHref}">this example archive</a> in order to understand how you should format your uploaded archive! Also, please note we only accept zip files.' => 'Wie dein Archiv aufgebaut sein muss, zeigt <a href="{templateArchiveHref}">dieses Beispielarchiv</a>. Es werden nur ZIP-Dateien angenommen.',
+  '* if multiple recipients, separate the email addresses by a comma.<br /> * the email tags will not be parsed while sending test emails.<br /> * make sure you save the template changes before you send the test.' => '* Mehrere Empfänger trennst du durch Kommas.<br /> * Beim Senden von Test-E-Mails werden die Tags nicht ersetzt.<br /> * Speichere die Änderungen an der Vorlage, bevor du den Test sendest.',
+);
