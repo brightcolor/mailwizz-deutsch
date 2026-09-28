@@ -31,7 +31,7 @@ class DeutschExtSyncCommand extends ConsoleCommand
     {
         $extension = extensionsManager()->getExtensionInstance('deutsch');
         if (!($extension instanceof DeutschExt) || !$extension->getIsEnabled()) {
-            $this->stdout('Die Erweiterung „Deutsch“ ist nicht aktiviert. Aktiviere sie unter Erweitern → Erweiterungen und starte den Befehl erneut.');
+            $this->line('Die Erweiterung „Deutsch“ ist nicht aktiviert. Aktiviere sie unter Erweitern → Erweiterungen und starte den Befehl erneut.');
 
             return 1;
         }
@@ -43,9 +43,9 @@ class DeutschExtSyncCommand extends ConsoleCommand
             'trigger' => DeutschExtSynchronizer::TRIGGER_CONSOLE,
         ]);
 
-        $this->stdout(($result['dry'] ? 'Probelauf, nichts geschrieben' : 'Abgleich') . ' für ' . $result['language']);
+        $this->line(($result['dry'] ? 'Probelauf, nichts geschrieben' : 'Abgleich') . ' für ' . $result['language']);
         if (!empty($result['bundle'])) {
-            $this->stdout(sprintf(
+            $this->line(sprintf(
                 'Textpaket %s (%s): %s Übersetzungen, %s Inhaltsstellen',
                 $result['bundle']['version'],
                 $result['bundle']['source'],
@@ -54,31 +54,39 @@ class DeutschExtSyncCommand extends ConsoleCommand
             ));
         }
         if (!empty($result['remote'])) {
-            $this->stdout('GitHub: ' . $result['remote']['message']);
+            $this->line('GitHub: ' . $result['remote']['message']);
         }
         if (!empty($result['scan'])) {
-            $this->stdout(DeutschExtResultPresenter::scanLine((array)$result['scan']));
+            $this->line(DeutschExtResultPresenter::scanLine((array)$result['scan']));
         }
         foreach ((array)$result['messages'] as $label => $count) {
             if ($count > 0) {
-                $this->stdout(sprintf('  %s %8s', $this->pad((string)$label), DeutschExtResultPresenter::number((int)$count)));
+                $this->line(sprintf('  %s %8s', $this->pad((string)$label), DeutschExtResultPresenter::number((int)$count)));
             }
         }
         foreach ((array)$result['content'] as $table => $count) {
-            $this->stdout(sprintf('  %s %8s geändert', $this->pad(DeutschExtResultPresenter::contentLabel((string)$table, 2)), DeutschExtResultPresenter::number((int)$count)));
+            $this->line(sprintf('  %s %8s geändert', $this->pad(DeutschExtResultPresenter::contentLabel((string)$table, 2)), DeutschExtResultPresenter::number((int)$count)));
         }
         if (!$result['dry']) {
-            $this->stdout(sprintf('  %s %8s geschrieben', $this->pad('Sprachdateien'), DeutschExtResultPresenter::number((int)$result['files']['language'])));
-            $this->stdout(sprintf('  %s %8s geschrieben', $this->pad('Framework-Dateien'), DeutschExtResultPresenter::number((int)$result['files']['framework'])));
+            $this->line(sprintf('  %s %8s geschrieben', $this->pad('Sprachdateien'), DeutschExtResultPresenter::number((int)$result['files']['language'])));
+            $this->line(sprintf('  %s %8s geschrieben', $this->pad('Framework-Dateien'), DeutschExtResultPresenter::number((int)$result['files']['framework'])));
         }
         foreach ((array)$result['problems'] as $problem) {
-            $this->stdout('Übersprungen: ' . $problem);
+            $this->line('Übersprungen: ' . $problem);
         }
         foreach ((array)$result['errors'] as $error) {
-            $this->stdout('Fehler: ' . $error);
+            $this->line('Fehler: ' . $error);
         }
 
         return $result['ok'] ? 0 : 1;
+    }
+
+    /**
+     * One report line; MailWizz would otherwise prefix it with the time in UTC.
+     */
+    private function line(string $text): void
+    {
+        $this->stdout($text, false);
     }
 
     /**

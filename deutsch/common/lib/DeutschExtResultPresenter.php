@@ -132,4 +132,28 @@ final class DeutschExtResultPresenter
     {
         return number_format($value, 0, ',', '.');
     }
+
+    /**
+     * The named zone, or the application zone (UTC in MailWizz) for an empty or unknown name.
+     */
+    public static function timeZone(?string $name): DateTimeZone
+    {
+        try {
+            return new DateTimeZone((string)$name);
+        } catch (Throwable) {
+            return new DateTimeZone(date_default_timezone_get());
+        }
+    }
+
+    /**
+     * "28.09.2026, 14:05 Uhr" in the given zone, "noch nie" without a timestamp.
+     */
+    public static function time(int $timestamp, DateTimeZone $zone): string
+    {
+        if ($timestamp <= 0) {
+            return 'noch nie';
+        }
+
+        return (new DateTimeImmutable('@' . $timestamp))->setTimezone($zone)->format('d.m.Y, H:i') . ' Uhr';
+    }
 }

@@ -15,9 +15,9 @@ $model = $controller->getData('model');
 /** @var array $status */
 $status = $controller->getData('status');
 
-$when = function (int $timestamp): string {
-    return $timestamp > 0 ? date('d.m.Y, H:i', $timestamp) . ' Uhr' : 'noch nie';
-};
+// MailWizz runs in UTC and shows times in the timezone of the signed-in user.
+$zone = DeutschExtResultPresenter::timeZone(user()->getModel()->timezone ?? null);
+$when = fn (int $timestamp): string => DeutschExtResultPresenter::time($timestamp, $zone);
 $last = (array)$status['last'];
 
 $groups = [

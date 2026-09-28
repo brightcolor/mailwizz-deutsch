@@ -1,12 +1,12 @@
 {
     "format": 1,
     "name": "mailwizz-deutsch",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "language": "de_de",
     "min_extension": "1.0.0",
     "files": {
         "de_de.json": {
-            "sha256": "1ba72b8f719c5642d31a61dc9c4c11e04cedab7f2e0672f8f08f88c90fe726c8",
+            "sha256": "d34919a1c21e2dfa8f02852df70150755ead16702f3b160b0a609330a0ad1390",
             "bytes": 703608,
             "messages": 6821,
             "content": 273

@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an Erweiterung und Textpaket. Versionen nach [Semantic Versioning](https://semver.org/lang/de/).
 
+## [1.0.1] – 2026-09-28
+
+### Behoben
+
+- Die Übersicht der Erweiterung zeigt den letzten Abgleich und den letzten GitHub-Abruf in der Zeitzone des angemeldeten Benutzers.
+- Der Konsolenbefehl `deutsch-sync` gibt seinen Bericht ohne die UTC-Uhrzeit aus, die MailWizz sonst vor jede Zeile setzt.
+
 ## [1.0.0] – 2026-09-27
 
 ### Neu
